@@ -9,6 +9,6 @@ class SessionLoader {
   
   public static function load() : void {
 
-        BON::getInstance()->getServer()->getPluginManager()->registerEvents(new SessionPlayer(), BOB::getInstance());
+        BOB::getInstance()->getServer()->getPluginManager()->registerEvents(new SessionPlayer(), BOB::getInstance());
   }
 }
