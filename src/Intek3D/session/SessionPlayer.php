@@ -12,7 +12,7 @@ use pocketmine\world\sound\BlazeShootSound;
 use Intek3D\session\SessionLoader;
 use Inten3D\BOB;
 
-class SessionPlayer implements Loader {
+class SessionPlayer implements Listener {
   
   
   public function onPlayerJoinEvent(PlayerJoinEvent $event){
