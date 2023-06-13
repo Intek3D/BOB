@@ -12,7 +12,7 @@ use pocketmine\level\sound\GhastShootSound;
 use Intek3D\session\SessionLoader;
 use Inten3D\BOB;
 
-class SessionPlayer implements SessionLoader {
+class SessionPlayer implements Listener {
   
   
   public function onPlayerJoinEvent(PlayerJoinEvent $event){
