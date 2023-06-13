@@ -18,6 +18,7 @@ class SessionPlayer implements Loader {
   public function onPlayerJoinEvent(PlayerJoinEvent $event){
     $player = $event->getPlayer();
     $nick = $player->getNameTag();
+    $world = $player->getWorld();
     $config = BOB::getInstance()->getConfig();
     $mensaje = str_replace("{nick}", $nick, $config->get("player-join"));
     $event->setJoinMessage($mensaje);
@@ -25,7 +26,7 @@ class SessionPlayer implements Loader {
     $player->sendTitle($config->get($title));
     $player->sendMessage($config->get("welcome-message"));
     $player->setHealth(20);
-    $player->getLevel()->addSound(new GhastShootSound($player));
+    $world->addSound($player->getPosition(), new GhastShootSound(), [$player]);
     $player->teleport($this->getServer()->getDefaultLevel()->getSafeSpawn());
   }
   public function onPlayerQuitEvent(PlayerQuitEvent $event){
