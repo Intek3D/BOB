@@ -12,4 +12,11 @@ use Intek3D\session\SessionLoader;
 
 class SessionPlayer implements SessionLoader {
   
+  
+  public function onPlayerJoinEvent(PlayerJoinEvent $event){
+    $player = $event->getPlayer();
+    $nick = $player->getNameTag();
+    
+    
+  }
 }
