@@ -7,7 +7,7 @@ use pocketmine\event\player\PlayerQuitEvent;
 use pocketmine\event\Listener;
 use pocketmine\player\Player;
 use pocketmine\Server;
-use pocketmine\level\sound\GhastShootSound;
+use pocketmine\world\sound\BlazeShootSound;
 
 use Intek3D\session\SessionLoader;
 use Inten3D\BOB;
@@ -26,8 +26,8 @@ class SessionPlayer implements Loader {
     $player->sendTitle($config->get($title));
     $player->sendMessage($config->get("welcome-message"));
     $player->setHealth(20);
-    $world->addSound($player->getPosition(), new GhastShootSound(), [$player]);
-    $player->teleport($this->getServer()->getDefaultLevel()->getSafeSpawn());
+    $player->getWorld()->addSound($player->getPosition(), new BlazeShootSound());
+    $player->teleport($this->getServer()->getDefaultWorld()->getSafeSpawn());
   }
   public function onPlayerQuitEvent(PlayerQuitEvent $event){
     $player = $event->getPlayer();
