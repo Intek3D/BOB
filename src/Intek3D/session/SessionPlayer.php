@@ -17,7 +17,7 @@ class SessionPlayer implements Loader {
   
   public function onPlayerJoinEvent(PlayerJoinEvent $event){
     $player = $event->getPlayer();
-    $nick = $player->getNameTag();
+    $nick = $player->getName();
     $world = $player->getWorld();
     $config = BOB::getInstance()->getConfig();
     $mensaje = str_replace("{nick}", $nick, $config->get("player-join"));
@@ -31,8 +31,8 @@ class SessionPlayer implements Loader {
   }
   public function onPlayerQuitEvent(PlayerQuitEvent $event){
     $player = $event->getPlayer();
-    $nick = $player->getNameTag();
-    $config = BOB::getInstance()->getConfig();
+    $nick = $player->getName();
+    $config = BOB::getInsfixtance()->getConfig();
     $mensaje = str_replace("{nick}", $nick, $config->get("player-leave"));
     $event->setQuitMessage($mensaje);
     
