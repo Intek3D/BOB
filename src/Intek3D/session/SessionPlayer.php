@@ -23,7 +23,7 @@ class SessionPlayer implements Loader {
     $mensaje = str_replace("{nick}", $nick, $config->get("player-join"));
     $event->setJoinMessage($mensaje);
     $title = str_replace("{nick", $nick, $config->get("player-title"));
-    $player->sendTitle($config->get($title));
+    $player->sendTitle($title);
     $player->sendMessage($config->get("welcome-message"));
     $player->setHealth(20);
     $player->getWorld()->addSound($player->getPosition(), new BlazeShootSound());
