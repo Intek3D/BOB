@@ -24,7 +24,6 @@ class SessionPlayer implements Loader {
     $title = str_replace("{nick", $nick, $config->get("player-title"));
     $player->sendTitle($config->get($title));
     $player->sendMessage($config->get("welcome-message"));
-    $player->setFood(20);
     $player->setHealth(20);
     $player->getLevel()->addSound(new GhastShootSound($player));
     $player->teleport($this->getServer()->getDefaultLevel()->getSafeSpawn());
