@@ -20,8 +20,13 @@ class BOB extends PluginBase {
    $this->getLogger()->info("§aTodo Funcionando Correctamente!");
    $this->saveResource("config.yml");
    $this->getServer()->getNetwork()->setName($config->get("motd-server"));
+   SessionLoader::load();
   }
   public function onDisable(): void {
     $this->getLogger()->info("§cTodo fue guardado correctamente!");
   }
+  public static function getInstance() : BOB {
+
+        return self::$instance;
+   }
  }

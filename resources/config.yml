@@ -1,0 +1,4 @@
+player-join: "§7[§a+§7] §f{nick} §7entro al servidor!"
+player-leave: "§7[§c-§7] §f{nick} §7salio del servidor!"
+player-title: "\n§cWelcome\n§f{nick}"
+welcome-message: "§7---------\n§fBienvenido a §1Astro §fPvP\n§7----------"

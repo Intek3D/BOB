@@ -21,7 +21,8 @@ class SessionPlayer implements SessionLoader {
     $config = BOB::getInstance()->getConfig();
     $mensaje = str_replace("{nick}", $nick, $config->get("player-join"));
     $event->setJoinMessage($mensaje);
-    $player->sendTitle($config->get("join-title"));
+    $title = str_replace("{nick", $nick, $config->get("player-title"));
+    $player->sendTitle($config->get($title));
     $player->sendMessage($config->get("welcome-message"));
     $player->setFood(20);
     $player->setHealth(20);
