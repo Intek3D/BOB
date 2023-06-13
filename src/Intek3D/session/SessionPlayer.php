@@ -27,7 +27,7 @@ class SessionPlayer implements Loader {
     $player->sendMessage($config->get("welcome-message"));
     $player->setHealth(20);
     $player->getWorld()->addSound($player->getPosition(), new BlazeShootSound());
-    $player->teleport($this->getServer()->getDefaultWorld()->getSafeSpawn());
+    $player->teleport(Server::getInstance()->getWorldManager()->getDefaultWorld()->getSafeSpawn());
   }
   public function onPlayerQuitEvent(PlayerQuitEvent $event){
     $player = $event->getPlayer();
