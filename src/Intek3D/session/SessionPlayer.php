@@ -10,7 +10,7 @@ use pocketmine\Server;
 use pocketmine\world\sound\BlazeShootSound;
 
 use Intek3D\session\SessionLoader;
-use Inten3D\BOB;
+use Intek3D\BOB;
 
 class SessionPlayer implements Listener {
   
@@ -22,7 +22,7 @@ class SessionPlayer implements Listener {
     $config = BOB::getInstance()->getConfig();
     $mensaje = str_replace("{nick}", $nick, $config->get("player-join"));
     $event->setJoinMessage($mensaje);
-    $title = str_replace("{nick", $nick, $config->get("player-title"));
+    $title = str_replace("{nick}", $nick, $config->get("player-title"));
     $player->sendTitle($title);
     $player->sendMessage($config->get("welcome-message"));
     $player->setHealth(20);
